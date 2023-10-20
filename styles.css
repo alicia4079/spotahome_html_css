@@ -16,9 +16,12 @@
 
 :root {
   --rtc-primary-color: #0d0d0d;
+  --rtc-hover-blue-color: rgb(54, 0, 134);
+  --rtc-hover-violet-color: rgb(84, 0, 84);
   --rtc-principal-background: #ffffff;
   --rtc-body-background: #f7f5f5;
   --rtc-footer-background: #f4efed;
+  --rtc--transparent-color: transparent;
   --rtc-margin-xs: 10px;
   --rtc-margin-s: 20px;
   --rtc-margin-m: 30px;
@@ -70,7 +73,7 @@ nav ul {
 nav button {
   border: none;
   padding: 8px 12px;
-  background-color: transparent;
+  background-color: var(--rtc--transparent-color);
   font-weight: 700;
   font-size: 16px;
   border: 1px solid var(--rtc-primary-color);
@@ -80,7 +83,7 @@ nav ul li a {
   color: var(--rtc-primary-color);
 }
 nav ul li a:hover {
-  color: rgb(54, 0, 134);
+  color: var(--rtc-hover-blue-color);
 }
 
 select {
@@ -125,8 +128,8 @@ select {
   font-weight: bold;
 }
 .list-mobile a:hover {
-  background-color: white;
-  color: rgb(84, 0, 84);
+  background-color: var(--rtc-principal-background);
+  color: var(--rtc-hover-violet-color);
 }
 #hamburguer:checked + .list-mobile {
   background-color: var(--rtc-footer-background);
@@ -187,8 +190,9 @@ select {
 .art-02,
 .art-03,
 .art-04 {
-  width: 100svh;
+  width: 900px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: var(--rtc-gap-l);
 }
@@ -253,6 +257,7 @@ span {
 }
 
 .guarantees {
+  max-width: 100svw;
   margin-left: var(--rtc-margin-xl);
   padding: var(--rtc-padding-xxl);
   display: flex;
@@ -262,7 +267,7 @@ span {
 }
 
 .guarantees ul {
-  width: 130svh;
+  width: 80%;
   display: flex;
   align-items: center;
   gap: var(--rtc-gap-xxl);
@@ -310,7 +315,7 @@ footer {
   font-weight: bold;
   border: none;
   padding: 16px 60px;
-  background-color: transparent;
+  background-color: var(--rtc--transparent-color);
   font-weight: 700;
   font-size: 16px;
   border: 1px solid var(--rtc-primary-color);
@@ -367,11 +372,18 @@ footer {
   }
 
   .guarantees ul {
-    width: 100svh;
+    width: 90svw;
   }
   .guarantees h3 {
     align-self: flex-start;
   }
+  .art-01,
+  .art-02,
+  .art-03,
+  .art-04 {
+    max-width: 60%;
+  }
+
   .center ul {
     max-width: 70%;
     flex-direction: column;
@@ -399,8 +411,9 @@ footer {
     display: none;
   }
   .hero {
+    max-width: 700px;
     background: url(./asssets/hero.png) no-repeat;
-    height: 500px;
+    height: 50%;
   }
   .articles {
     padding-top: var(--rtc-padding-xs);
@@ -423,8 +436,14 @@ footer {
   .columns-02 {
     flex-direction: column;
   }
+  .guarantees {
+    align-items: center;
+    justify-content: center;
+  }
   .guarantees ul {
-    width: 60svh;
+    width: 60svw;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media (max-width: 400px) {
